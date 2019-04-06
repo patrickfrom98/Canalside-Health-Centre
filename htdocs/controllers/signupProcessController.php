@@ -20,14 +20,14 @@ class SignupProcessController extends Controller {
                 Users::setRole($user['user_id'], "Patient"); // adds role to role table
                 Users::connectToPatient($user['user_id'], $patient->getPatientId()); // Adds user_id to patient in patient table - connects user/patient
                 $_SESSION['patient_signup'] = true;
-                header("Location: front-controller.php?action=signup");
+                header("Location: index.php?action=signup");
             } else {
                 $_SESSION['patient_signed_up'] = true;
-                header("Location: front-controller.php?action=signup");
+                header("Location: index.php?action=signup");
             }
         } else {
             $_SESSION['patient_not_found'] = true;
-            header("Location: front-controller.php?action=signup");
+            header("Location: index.php?action=signup");
         }
         $title = "Sign In | Canalside Health Centre";
         include("views/login-view.php");

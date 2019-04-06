@@ -21,7 +21,7 @@
                     Register a patient
                 </div>
                 <div class="card-body">
-                    <form action="front-controller.php?action=register-process" method="POST">
+                    <form action="index.php?action=register-process" method="POST">
                         <!-- PATIENT PERSONAL DETAILS -->
                         <div class="form-group">
                             <label for="patient_id">Patient ID</label>

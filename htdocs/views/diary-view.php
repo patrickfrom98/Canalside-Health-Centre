@@ -15,7 +15,7 @@
                     Open a new diary
                 </div>
                 <div class="card-body">
-                    <form action="front-controller.php?action=add-diary-process" method="post">
+                    <form action="index.php?action=add-diary-process" method="post">
                         <div class="form-group">
                             <label for="diary_name">Diary Name</label>
                             <div class="input-group mb-3">

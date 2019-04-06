@@ -27,7 +27,7 @@
                   echo "<a class='nav-item nav-link' href='index.php?action=users'>Users</a>";
               }
               ?>
-              <a class="nav-item nav-link" href='front-controller.php?action=logout'>Logout</a>
+              <a class="nav-item nav-link" href='index.php?action=logout'>Logout</a>
           </div>
       </div>
   </nav>

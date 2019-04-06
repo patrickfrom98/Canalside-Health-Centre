@@ -15,7 +15,7 @@
                         echo "</div>";
                     }
                     ?>
-                    <form action="front-controller.php?action=login-process" method="POST">
+                    <form action="index.php?action=login-process" method="POST">
                         <div class="form-group">
                             <label for="username">Username</label>
                             <div class="input-group mb-3">
@@ -42,7 +42,7 @@
                     </form>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a class="card-link" href="front-controller.php?action=signup">Signup</a></li>
+                    <li class="list-group-item"><a class="card-link" href="index.php?action=signup">Signup</a></li>
                 </ul>
             </div>
         </div>

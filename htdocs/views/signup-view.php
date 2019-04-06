@@ -11,26 +11,26 @@
                     <?php
                     if (isset($_SESSION['patient_signup'])) {
                         echo "<div class='alert alert-success'>";
-                        echo "<strong>Success!</strong> Sign up completed Click here to <a href='front-controller.php?action=login'>login</a>.";
+                        echo "<strong>Success!</strong> Sign up completed Click here to <a href='index.php?action=login'>login</a>.";
                         echo "</div>";
                         $_SESSION['patient_signup'] = null;
                     }
 
                     if (isset($_SESSION['patient_signed_up'])) {
                         echo "<div class='alert alert-danger'>";
-                        echo "<strong>Error!</strong> You have already signed up. Click here to <a href='front-controller.php?action=login'>login</a>.";
+                        echo "<strong>Error!</strong> You have already signed up. Click here to <a href='index.php?action=login'>login</a>.";
                         echo "</div>";
                         $_SESSION['patient_signed_up'] = null;
                     }
 
                     if (isset($_SESSION['patient_not_found'])) {
                         echo "<div class='alert alert-danger'>";
-                        echo "<strong>Error!</strong> We can't find your details. Click here to <a href='front-controller.php?action=signup'>signup</a>.";
+                        echo "<strong>Error!</strong> We can't find your details. Click here to <a href='index.php?action=signup'>signup</a>.";
                         echo "</div>";
                         $_SESSION['patient_not_found'] = null;
                     }
                     ?>
-                    <form action="front-controller.php?action=signup-process" method="POST">
+                    <form action="index.php?action=signup-process" method="POST">
                         <div class="form-group">
                             <label for="username">Username</label>
                             <div class="input-group mb-3">

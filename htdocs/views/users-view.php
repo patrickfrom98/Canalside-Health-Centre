@@ -22,7 +22,7 @@
                         $_SESSION['staff_account_added'] = null;
                     }
                     ?>
-                    <form action="front-controller.php?action=add-user-process" method="post">
+                    <form action="index.php?action=add-user-process" method="post">
                         <div class="form-group">
                             <label for="reg_user">Username</label>
                             <div class="input-group mb-3">
@@ -76,7 +76,7 @@
                     View user profiles
                 </div>
                 <div class="card-body">
-                    <form action="front-controller.php?action=find-user-process" method="POST">
+                    <form action="index.php?action=find-user-process" method="POST">
                         <div class="form-group">
                             <label for="search">Username</label>
                             <div class="input-group mb-3">

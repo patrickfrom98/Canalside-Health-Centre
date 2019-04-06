@@ -14,6 +14,6 @@ class LogoutController extends Controller {
         $_SESSION['role'] = null;
         session_destroy();
         $title = "Sign In | Canalside Health Centre";
-        header("Location: front-controller.php?action=login");
+        header("Location: index.php?action=login");
     }
 }
