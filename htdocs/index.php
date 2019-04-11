@@ -13,6 +13,7 @@ require_once("classes/Patient.php");
 require_once("classes/Address.php");
 require_once("classes/Contact.php");
 require_once("classes/Profile.php");
+require_once("classes/PatientID.php");
 require_once("controllers/controller.php");
 require_once("controllers/loginController.php");
 require_once("controllers/loginProcessController.php");

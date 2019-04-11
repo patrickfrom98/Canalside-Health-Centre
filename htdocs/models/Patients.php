@@ -168,19 +168,19 @@ class Patients {
     }
 
     /**
-     * Checks if patient is registered with surgery
+     * Checks if id is already in use
      *
-     * @param $patientId - the users unique patient_id
-     * @return boolean value
+     * @param $patientId
+     * @return boolean
      */
-    function isRegisterPatient($patientId) {
+    public static function isValidId($patientId) {
         $conn = DB::getConnection();
-        $patient = findByPatientId($patientId);
-        if ($patient) {
-            DB::closeConnection($conn);
-            return true;
-        }
+        $stmt = $conn->prepare("SELECT * FROM mvc_patient WHERE mvc_patient.patient_id = :id");
+        $stmt->bindValue(':id', $patientId);
+        $stmt->execute();
+        $patient = $stmt->fetch();
         DB::closeConnection($conn);
+        if (isset($patient)) { return true; }
         return false;
     }
 }

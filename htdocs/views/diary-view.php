@@ -84,7 +84,7 @@
         <div class="col-12 col-md-6">
             <div class="card">
                 <div class="card-header">
-                    Active diaries
+                    Current diaries
                 </div>
                 <div class="card-body">
                     <!-- Reference: https://www.w3schools.com/html/html_tables.asp -->
@@ -101,10 +101,10 @@
 
                         foreach ($diaries as $diary) {
                             echo "<tr>";
-                            echo "<td>{$diary['diary_name']}</td>";
-                            echo "<td>{$diary['clinician_name']}</td>";
-                            echo "<td>{$diary['start_time']}</td>";
-                            echo "<td>{$diary['end_time']}</td>";
+                            echo "<td>{$diary->getName()}</td>";
+                            echo "<td>{$diary->getOwner()}</td>";
+                            echo "<td>{$diary->getStart()}</td>";
+                            echo "<td>{$diary->getEnd()}</td>";
                             echo "</tr>";
                         }
 

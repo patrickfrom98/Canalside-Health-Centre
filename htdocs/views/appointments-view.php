@@ -17,7 +17,7 @@
                     echo "<div class='card-header'>{$diary->getName()}</div>";
                     echo "<div class='card-body'>";
                     echo "<div class='table-responsive'>";
-                    echo "<table class='table table-bordered table-hover'>";
+                    echo "<table class='table table-bordered'>";
 
                     $startTime = $diary->getStart();
                     $appointments = $diary->getAppointments();
@@ -25,13 +25,13 @@
                     for ($i = 0; $i < $diary->getNoOfAppointments(); $i++) {
                         echo "<tr>";
                         $time = date('H:i', strtotime($startTime) + ($i * 60 * 15)); // sets correct time for appointment
-                        echo "<td>{$time}</td>";
+                        echo "<td style='background-color: #bdc3c7; color: #fff;'>{$time}</td>";
 
-                        $appt = $diary->getAppointment($time);
-                        if ($appt) {
-                            echo "<td>Booked</td>";
+                        $appointment = $diary->getAppointment($time);
+                        if (isset($appointment)) {
+                            echo "<td style='background-color: #D4EDDA'>Booked</td>";
                         } else {
-                            echo "<td>Appointment: {$i}</td>";
+                            echo "<td style='background-color: #bdc3c7; color: #fff;'></td>";
                         }
                         echo "</tr>";
                     }
@@ -42,7 +42,7 @@
                     echo "</div>";
                 }
             } else {
-                echo "<h4>No diaries have been setup for today</h4>";
+                echo "<p>No diaries have been setup for today</p>";
             }
             ?>
         </div>

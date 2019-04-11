@@ -63,14 +63,14 @@ class Diary {
     }
 
     public function getEnd() {
-        return $this->id;
+        return $this->end;
     }
 
     /**
      * Gets the number of 15 min appointments the diary contains
      * between its start and end times
      *
-     * @return $noOfSlots - number of appointments as an int
+     * @return int - number of appointments as an int
      */
     public function getNoOfAppointments() {
         $startTime = strtotime($this->start);
@@ -95,12 +95,12 @@ class Diary {
      * @return null / $appointment
      */
     public function getAppointment($time) {
-        $appointments = $this->getAppointments();
-        foreach ($appointments as $appointment) {
-            echo "Appointment: {$appointment['appointment_time']}";
-            echo "Time: {$time}";
-            if ($appointment['appointment_time'] === $time) {
-                return $appointment;
+        $appointments = $this->appointments;
+        if (isset($appointments)) {
+            foreach ($appointments as $appointment) {
+                if ($appointment->getTime() === "{$time}:00") {
+                    return $appointment;
+                }
             }
         }
         return null;

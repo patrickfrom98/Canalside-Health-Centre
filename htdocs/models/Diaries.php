@@ -34,7 +34,7 @@ class Diaries {
      * Gets all diaries for the a given day
      *
      * @param $date - the date chosen
-     * @return $diaries
+     * @return array of Diary
      */
     public static function getAllDiaries($date) {
         $conn = DB::getConnection();
@@ -42,24 +42,33 @@ class Diaries {
         $stmt->bindValue(':diaryDate', $date);
         $stmt->execute();
         $diaries = $stmt->fetchAll();
+        $diariesArray = array();
+        foreach ($diaries as $diary) {
+            $appointments = self::getAppointments($diary['diary_id']);
+            array_push($diariesArray, new Diary($diary['diary_id'], $diary['diary_name'], $diary['diary_date'], $diary['clinician_name'], $diary['start_time'], $diary['end_time'], $appointments));
+        }
         DB::closeConnection($conn);
-        return $diaries;
+        return $diariesArray;
     }
 
     /**
      * Get appointment for a diary
      *
      * @param $id - diary id
-     * @return $appointments as array
+     * @return array of Appointment
      */
     public static function getAppointments($id) {
         $conn = DB::getConnection();
-        $stmt = $conn->prepare("SELECT * FROM mvc_appointment INNER JOIN mvc_diary_appointment ON mvc_appointment.appointment_id = mvc_diary_appointment.appointment_id INNER JOIN mvc_diary ON mvc_diary_appointment.diary_id = mvc_diary.diary_id WHERE mvc_diary.diary_id = :id");
+        $stmt = $conn->prepare("SELECT * FROM mvc_appointment INNER JOIN mvc_diary_appointment ON mvc_appointment.appointment_id = mvc_diary_appointment.appointment_id INNER JOIN mvc_diary ON mvc_diary_appointment.diary_id = mvc_diary.diary_id WHERE mvc_diary.diary_id = :id ORDER BY appointment_time");
         $stmt->bindValue(':id', $id);
         $stmt->execute();
         $appointments = $stmt->fetchAll();
+        $appointmentsArray = array();
+        foreach ($appointments as $appointment) {
+            array_push($appointmentsArray, new Appointment($appointment['appointment_id'], $appointment['appointment_time']));
+        }
         DB::closeConnection($conn);
-        return $appointments;
+        return $appointmentsArray;
     }
 }
 

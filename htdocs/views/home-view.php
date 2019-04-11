@@ -3,22 +3,14 @@
 <div class="container">
     <div aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Home</li>
+            <li class="breadcrumb-item"><a href="index.php?action=home">Home</a></li>
+            <li class="breadcrumb-item"><a href="index.php?action=diary">Diaries</a></li>
+            <li class="breadcrumb-item"><a href="index.php?action=appointments">Appointments</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Booking</li>
         </ol>
     </div>
-    <div class="jumbotron">
-        <h1 class="display-4">Welcome, <?php echo $_SESSION['name']; ?></h1>
-        <p class="lead">This is the Canalside Health Centre <strong>dashboard</strong>. Access all areas using the top navigation or dashboard functions.</p>
-        <hr class="my-4">
-        <p>View today's upcoming appointments and ledgers</p>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="index.php?action=appointments" role="button">Appointments</a>
-        </p>
-    </div>
     <div class="row">
-        <div class="col-12">
 
-        </div>
     </div>
 </div>
 

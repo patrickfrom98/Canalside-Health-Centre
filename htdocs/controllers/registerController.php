@@ -13,6 +13,10 @@ class RegisterController extends Controller {
         $notify = false;
         if (isset($_GET['registered'])) { $notify = true; }
         $title = "Register Patient | Canalside Health Centre";
+        $id = PatientID::generate();
+        while (!Patients::isValidId($id)) {
+            $id = PatientID::generate();
+        }
         include("views/register-view.php");
     }
 }

@@ -39,7 +39,7 @@
                                 <i class="fa fa-user"></i>
                             </span>
                                 </div>
-                                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -52,14 +52,15 @@
                                             <i class="fa fa-key"></i>
                                         </span>
                                         </div>
-                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" pattern=".{8,}" title="Password must contain 8 or more characters" required>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="confirm_password">Confirm Password</label>
-                                    <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirm password">
+                                    <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirm password" pattern=".{8,}" title="Password must contain 8 or more characters" required>
                                 </div>
                             </div>
+                            <small class="form-text text-muted">Strong passwords contain a mix of upper and lower case letters and a range of numbers and/or special characters</small>
                         </div>
                         <div class="form-group">
                             <label for="patient_id">Patient ID</label>
@@ -69,7 +70,7 @@
                                 <i class="fa fa-user-shield"></i>
                             </span>
                                 </div>
-                                <input type="text" class="form-control" name="patient_id" id="patient_id" placeholder="16-digit code">
+                                <input type="text" class="form-control" name="patient_id" id="patient_id" placeholder="16-digit code" pattern="CHS[0-9]{13}" title="Patient ID has to match the format of 'CHS' followed by 13 digits" required>
                             </div>
                             <small id="patientIdHelp" class="form-text text-muted">The one given to you by our receptionists after registration. Eg. CHS004TP2...</small>
                         </div>

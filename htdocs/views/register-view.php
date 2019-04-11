@@ -31,7 +31,7 @@
                                         <i class="fa fa-user-shield"></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control" name="patient_id" id="patient_id" placeholder="Patient ID" required>
+                                <input type="text" class="form-control" name="patient_id" id="patient_id" placeholder="Patient ID" <?php echo "value='{$id}'" ?> readonly>
                             </div>
                         </div>
                         <div class="form-group">

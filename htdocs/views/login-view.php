@@ -35,7 +35,8 @@
                                 <i class="fa fa-key"></i>
                             </span>
                                 </div>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                                <!-- Reference: https://www.w3schools.com/tags/att_input_pattern.asp -->
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password" pattern=".{8,}" title="Password must contain 8 or more characters" required>
                             </div>
                         </div>
                         <input type="submit" class="btn btn-primary" name="login_btn" value="Login">
