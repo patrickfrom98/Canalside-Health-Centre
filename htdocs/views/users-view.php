@@ -51,8 +51,6 @@
                         </div>
                         <div class="form-group">
                             <label for="role">Role</label>
-
-
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                             <span class="input-group-text">

@@ -79,6 +79,19 @@ switch ($action) {
         AppointmentsController::run();
         break;
 
+    case "booking":
+        $diaries = Diaries::getAllDiaries(date("Y-m-d"));
+        if (isset($diaries)) {
+            include "views/booking-view.php";
+        } else {
+            header("Location: index.php?action=appointments");
+        }
+        break;
+
+    case "booking-process":
+        Diaries::addAppointment(new Appointment());
+        break;
+
     case "users": // Users Page
         UsersController::run();
         break;

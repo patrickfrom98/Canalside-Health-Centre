@@ -63,6 +63,8 @@ CREATE TABLE mvc_diary (
 CREATE TABLE mvc_appointment (
     appointment_id INT AUTO_INCREMENT NOT NULL,
     appointment_time TIME NOT NULL,
+    patient_id VARCHAR(16),
+    patient_name VARCHAR(60),
     PRIMARY KEY (appointment_id)
 );
 

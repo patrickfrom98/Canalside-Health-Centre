@@ -52,6 +52,23 @@ class Diaries {
     }
 
     /**
+     * Adds an appointment to a diary
+     *
+     * @param $appointmentTime
+     * @param $patientId
+     * @param $patientName
+     */
+    public static function addAppointment($appointmentTime, $patientId, $patientName) {
+        $conn = DB::getConnection();
+        $stmt = $conn->prepare("INSERT INTO mvc_appointment (appointment_id, appointment_time, patient_id, patient_name) VALUES (NULL, :appointmentTime, :patientId, :patientName)");
+        $stmt->bindValue(':appointmentTime', $appointmentTime);
+        $stmt->bindValue(':patientId', $patientId);
+        $stmt->bindValue(':patientName', $patientName);
+        $stmt->execute();
+        DB::closeConnection($conn);
+    }
+
+    /**
      * Get appointment for a diary
      *
      * @param $id - diary id
@@ -65,7 +82,7 @@ class Diaries {
         $appointments = $stmt->fetchAll();
         $appointmentsArray = array();
         foreach ($appointments as $appointment) {
-            array_push($appointmentsArray, new Appointment($appointment['appointment_id'], $appointment['appointment_time']));
+            array_push($appointmentsArray, new Appointment($appointment['appointment_id'], $appointment['appointment_time'],$appointment['patient_id'], $appointment['patient_name']));
         }
         DB::closeConnection($conn);
         return $appointmentsArray;

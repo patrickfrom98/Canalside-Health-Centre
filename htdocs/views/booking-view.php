@@ -6,14 +6,70 @@
                 <li class="breadcrumb-item active" aria-current="page">Home</li>
             </ol>
         </div>
-        <div class="jumbotron">
-            <h1 class="display-4">Welcome, <?php echo $_SESSION['name']; ?></h1>
-            <p class="lead">This is the Canalside Health Centre <strong>dashboard</strong>. Access all areas using the top navigation or dashboard functions.</p>
-            <hr class="my-4">
-            <p>View today's upcoming appointments and ledgers</p>
-            <p class="lead">
-                <a class="btn btn-primary btn-lg" href="index.php?action=appointments" role="button">Appointments</a>
-            </p>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        Book Appointment
+                    </div>
+                    <div class="card-body">
+                        <form action="index.php?action=booking-process" method="post">
+                            <div class="form-group">
+                                <label for="diary">Diary</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-book-medical"></i>
+                                        </span>
+                                    </div>
+                                    <select class="form-control" name="diary" id="diary">
+                                        <?php
+                                        foreach ($diaries as $diary) {
+                                            echo "<option value='{$diary->getId()}'>{$diary->getName()}</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-clock"></i>
+                                        </span>
+                                    </div>
+                                    <!-- Reference: https://stackoverflow.com/questions/1494671/regular-expression-for-matching-time-in-military-24-hour-format -->
+                                    <input type="text" class="form-control" name="time" id="time" placeholder="Time Eg. 08:30" pattern="^([01]\d|2[0-3]):(00|15|30|45)$" title="Time should be a valid time in 24 hour format. Eg. 08:30" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="patient_id">Patient ID</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-user-shield"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" name="patient_id" id="patient_id" placeholder="16-digit code" pattern="CHS[0-9]{13}" title="Patient ID has to match the format of 'CHS' followed by 13 digits" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="patient_name">Patient Name</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" name="patient_name" id="patient_name" placeholder="Patients full name. Eg. Mr John Doe" required>
+                                </div>
+                            </div>
+                            <input type="submit" class="btn btn-primary" name="submit" value="Book">
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

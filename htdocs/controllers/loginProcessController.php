@@ -15,7 +15,7 @@ class LoginProcessController extends Controller {
             if (password_verify(trim($_POST['password']), $user['password'])) { // check passwords match
                 $role = Users::getRole($user['user_id']);
                 Session::setLoginSessions($user['username'], $role);
-                include("views/home-view.php");
+                header("Location: index.php?action=home");
             } else {
                 $errorMsg = true;
                 include "views/login-view.php";

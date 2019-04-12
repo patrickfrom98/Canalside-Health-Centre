@@ -25,13 +25,13 @@
                     for ($i = 0; $i < $diary->getNoOfAppointments(); $i++) {
                         echo "<tr>";
                         $time = date('H:i', strtotime($startTime) + ($i * 60 * 15)); // sets correct time for appointment
-                        echo "<td style='background-color: #bdc3c7; color: #fff;'>{$time}</td>";
+                        echo "<td>{$time}</td>";
 
                         $appointment = $diary->getAppointment($time);
                         if (isset($appointment)) {
-                            echo "<td style='background-color: #D4EDDA'>Booked</td>";
+                            echo "<td>{$appointment->getPatientName()}</td>";
                         } else {
-                            echo "<td style='background-color: #bdc3c7; color: #fff;'></td>";
+                            echo "<td></td>";
                         }
                         echo "</tr>";
                     }
@@ -39,6 +39,9 @@
                     echo "</table>";
                     echo "</div>";
                     echo "</div>";
+                    echo "<ul class='list-group list-group-flush'>";
+                    echo "<li class='list-group-item'><a class='btn btn-primary' href='index.php?action=booking'>Book Appointment</a></li>";
+                    echo "</ul>";
                     echo "</div>";
                 }
             } else {

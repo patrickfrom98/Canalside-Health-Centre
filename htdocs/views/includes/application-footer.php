@@ -3,41 +3,42 @@
 <footer class="page-footer font-small stylish-color-dark pt-4">
     <!-- Footer Links -->
     <div class="text-center text-md-left">
-
-        <!-- Grid row -->
-        <div class="row">
-            <!-- Grid column -->
-            <div class="col-md-4 mx-auto">
-                <!-- Content -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Canalside Health Centre</h5>
-                <p>A GP surgery local to the Huddersfield area. We are open 08:00 - 18:30, Monday - Friday.
-                    Call us on our telephone number 01484 469882.</p>
+        <div class="container">
+            <!-- Grid row -->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-4 mx-auto">
+                    <!-- Content -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Canalside Health Centre</h5>
+                    <p>A GP surgery local to the Huddersfield area. We are open 08:00 - 18:30, Monday - Friday.
+                        Call us on our telephone number 01484 469882.</p>
+                </div>
+                <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none">
+                <!-- Grid column -->
+                <div class="col-md-4 mx-auto">
+                    <!-- Content -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Canalside Health Centre</h5>
+                    <p>A GP surgery local to the Huddersfield area. We are open 08:00 - 18:30, Monday - Friday.
+                        Call us on our telephone number: 01484 469882.</p>
+                </div>
+                <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none">
+                <!-- Grid column -->
+                <div class="col-md-2 mx-auto">
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#!">Link 1</a></li>
+                        <li><a href="#!">Link 2</a></li>
+                        <li><a href="#!">Link 3</a></li>
+                        <li><a href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <!-- Grid column -->
             </div>
-            <!-- Grid column -->
-            <hr class="clearfix w-100 d-md-none">
-            <!-- Grid column -->
-            <div class="col-md-4 mx-auto">
-                <!-- Content -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Canalside Health Centre</h5>
-                <p>A GP surgery local to the Huddersfield area. We are open 08:00 - 18:30, Monday - Friday.
-                    Call us on our telephone number: 01484 469882.</p>
-            </div>
-            <!-- Grid column -->
-            <hr class="clearfix w-100 d-md-none">
-            <!-- Grid column -->
-            <div class="col-md-2 mx-auto">
-                <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#!">Link 1</a></li>
-                    <li><a href="#!">Link 2</a></li>
-                    <li><a href="#!">Link 3</a></li>
-                    <li><a href="#!">Link 4</a></li>
-                </ul>
-            </div>
-            <!-- Grid column -->
+            <!-- Grid row -->
         </div>
-        <!-- Grid row -->
     </div>
     <!-- Footer Links -->
     <hr>
