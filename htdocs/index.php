@@ -88,6 +88,14 @@ switch ($action) {
         BookingProcessController::run();
         break;
 
+    case "bookings":
+        $user = Users::findByUsername($_SESSION['name']);
+        $patient = Patients::findByUserId($user['user_id']);
+        $upcoming = Diaries::getUpcoming($patient['patient_id']);
+        $previous = Diaries::getPrevious($patient['patient_id']);
+        include "views/bookings-view.php";
+        break;
+
     case "users": // Users Page
         UsersController::run();
         break;

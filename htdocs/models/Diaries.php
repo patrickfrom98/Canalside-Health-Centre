@@ -114,6 +114,38 @@ class Diaries {
         DB::closeConnection($conn);
         return $appointmentsArray;
     }
+
+    /**
+     * Gets upcoming appointments for a patient
+     *
+     * @param $id
+     * @return array of Appointment
+     */
+    public static function getUpcoming($id) {
+        $conn = DB::getConnection();
+        $stmt = $conn->prepare("SELECT * FROM `mvc_appointment` INNER JOIN mvc_diary_appointment ON mvc_appointment.appointment_id = mvc_diary_appointment.appointment_id INNER JOIN mvc_diary ON mvc_diary_appointment.diary_id = mvc_diary.diary_id WHERE mvc_appointment.patient_id = :id AND mvc_diary.diary_date = CURDATE() AND CURTIME() < mvc_appointment.appointment_time ORDER BY appointment_time ASC");
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+        $appointments = $stmt->fetchAll();
+        DB::closeConnection($conn);
+        return $appointments;
+    }
+
+    /**
+     * Gets previous appointments for a patient
+     *
+     * @param $id
+     * @return array of Appointment
+     */
+    public static function getPrevious($id) {
+        $conn = DB::getConnection();
+        $stmt = $conn->prepare("SELECT * FROM `mvc_appointment` INNER JOIN mvc_diary_appointment ON mvc_appointment.appointment_id = mvc_diary_appointment.appointment_id INNER JOIN mvc_diary ON mvc_diary_appointment.diary_id = mvc_diary.diary_id WHERE mvc_appointment.patient_id = :id AND mvc_diary.diary_date <= CURDATE() AND mvc_appointment.appointment_time < CURTIME() ORDER BY appointment_time ASC");
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+        $appointments = $stmt->fetchAll();
+        DB::closeConnection($conn);
+        return $appointments;
+    }
 }
 
 ?>

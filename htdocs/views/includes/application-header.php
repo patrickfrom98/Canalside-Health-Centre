@@ -26,9 +26,8 @@
                   echo "<a class='nav-item nav-link' href='index.php?action=diary'>Diaries</a>";
                   echo "<a class='nav-item nav-link' href='index.php?action=users'>Users</a>";
               } else if ($_SESSION['role'] === "Patient") {
-                  echo "<a class='nav-item nav-link' href=''>Profile</a>";
-                  echo "<a class='nav-item nav-link' href=''>Appointments</a>";
-                  echo "<a class='nav-item nav-link' href=''>Account</a>";
+                  echo "<a class='nav-item nav-link' href='index.php?action=details'>Details</a>";
+                  echo "<a class='nav-item nav-link' href='index.php?action=bookings'>Bookings</a>";
               }
               ?>
               <a class="nav-item nav-link" href='index.php?action=logout'>Logout</a>

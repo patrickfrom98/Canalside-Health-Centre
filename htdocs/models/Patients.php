@@ -120,7 +120,7 @@ class Patients {
         $stmt = $conn->prepare("SELECT * FROM mvc_patient WHERE mvc_patient.user_id = :id");
         $stmt->bindValue(':id', $userId);
         $stmt->execute();
-        $patient=$stmt->fetch();
+        $patient = $stmt->fetch();
         DB::closeConnection($conn);
         return $patient;
     }
