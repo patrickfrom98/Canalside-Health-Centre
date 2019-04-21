@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION['name'])) {
+    header("Location: index.php?action=401");
+}
+?>
+
 <?php include("includes/application-header.php"); ?>
 
 <div class="container">

@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION['name'])) {
+    header("Location: index.php?action=401");
+}
+?>
+
 <?php include("includes/application-header.php"); ?>
 
     <div class="container">
@@ -13,6 +19,30 @@
                         Book Appointment
                     </div>
                     <div class="card-body">
+
+                        <?php
+                        if (isset($_SESSION['appointment_not_booked'])) {
+                            echo "<div class='alert alert-danger'>";
+                            echo "<strong>Error!</strong> Something went wrong, please re-book the appointment.";
+                            echo "</div>";
+                            $_SESSION['appointment_not_booked'] = null;
+                        }
+
+                        if (isset($_SESSION['appointment_already_exists'])) {
+                            echo "<div class='alert alert-danger'>";
+                            echo "<strong>Error!</strong> This appointment time has already been filled.";
+                            echo "</div>";
+                            $_SESSION['appointment_already_exists'] = null;
+                        }
+
+                        if (isset($_SESSION['appointment_booked'])) {
+                            echo "<div class='alert alert-success'>";
+                            echo "<strong>Success!</strong> Appointment booked.";
+                            echo "</div>";
+                            $_SESSION['appointment_booked'] = null;
+                        }
+                        ?>
+
                         <form action="index.php?action=booking-process" method="post">
                             <div class="form-group">
                                 <label for="diary">Diary</label>

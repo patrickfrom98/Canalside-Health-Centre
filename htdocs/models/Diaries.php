@@ -61,11 +61,38 @@ class Diaries {
     public static function addAppointment($appointmentTime, $patientId, $patientName) {
         $conn = DB::getConnection();
         $stmt = $conn->prepare("INSERT INTO mvc_appointment (appointment_id, appointment_time, patient_id, patient_name) VALUES (NULL, :appointmentTime, :patientId, :patientName)");
-        $stmt->bindValue(':appointmentTime', $appointmentTime);
-        $stmt->bindValue(':patientId', $patientId);
-        $stmt->bindValue(':patientName', $patientName);
+        $stmt->bindValue(':appointmentTime', trim($appointmentTime));
+        $stmt->bindValue(':patientId', trim($patientId));
+        $stmt->bindValue(':patientName', trim($patientName));
         $stmt->execute();
         DB::closeConnection($conn);
+    }
+
+    /**
+     * Connects appointment to the correct clinical diary
+     *
+     * @param $appointmentId
+     * @param $diaryId
+     */
+    public static function connectToDiary($appointmentId, $diaryId) {
+        $conn = DB::getConnection();
+        $stmt = $conn->prepare("INSERT INTO mvc_diary_appointment (appointment_id, diary_id) VALUES (:appointment, :diary)");
+        $stmt->bindValue(':appointment', trim($appointmentId));
+        $stmt->bindValue(':diary', trim($diaryId));
+        $stmt->execute();
+        DB::closeConnection($conn);
+    }
+
+    /**
+     * Gets id of last booked appointment
+     */
+    public static function getId() {
+        $conn = DB::getConnection();
+        $stmt = $conn->prepare("SELECT appointment_id FROM mvc_appointment ORDER BY appointment_id DESC LIMIT 1");
+        $stmt->execute();
+        $id = $stmt->fetch();
+        DB::closeConnection($conn);
+        return $id;
     }
 
     /**

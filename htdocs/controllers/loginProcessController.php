@@ -14,7 +14,8 @@ class LoginProcessController extends Controller {
         if (isset($user)) { // if user found
             if (password_verify(trim($_POST['password']), $user['password'])) { // check passwords match
                 $role = Users::getRole($user['user_id']);
-                Session::setLoginSessions($user['username'], $role);
+                $_SESSION['name'] = $user['username'];
+                $_SESSION['role'] = $role['role'];
                 header("Location: index.php?action=home");
             } else {
                 $errorMsg = true;

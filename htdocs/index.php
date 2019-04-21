@@ -6,7 +6,6 @@ require_once("databases/DB.php");
 require_once("models/Patients.php");
 require_once("models/Users.php");
 require_once("models/Diaries.php");
-require_once("models/Session.php");
 require_once("classes/Diary.php");
 require_once("classes/Appointment.php");
 require_once("classes/Patient.php");
@@ -31,6 +30,8 @@ require_once("controllers/findUserProcessController.php");
 require_once("controllers/profilesController.php");
 require_once("controllers/profileController.php");
 require_once("controllers/logoutController.php");
+require_once("controllers/bookingController.php");
+require_once("controllers/bookingProcessController.php");
 
 if (isset($_GET["action"])) {
     $action = $_GET['action'];
@@ -79,24 +80,19 @@ switch ($action) {
         AppointmentsController::run();
         break;
 
-    case "booking":
-        $diaries = Diaries::getAllDiaries(date("Y-m-d"));
-        if (isset($diaries)) {
-            include "views/booking-view.php";
-        } else {
-            header("Location: index.php?action=appointments");
-        }
+    case "booking": // Booking Page
+        BookingController::run();
         break;
 
-    case "booking-process":
-        Diaries::addAppointment(new Appointment());
+    case "booking-process": // Process for booking an appointment
+        BookingProcessController::run();
         break;
 
     case "users": // Users Page
         UsersController::run();
         break;
 
-    case "add-user-process":
+    case "add-user-process": // Process for adding a staff account
         AddUserProcessController::run();
         break;
 
@@ -104,17 +100,21 @@ switch ($action) {
         FindUserProcessController::run();
         break;
 
-    case "profiles":
+    case "profiles": // Profiles Page
         ProfilesController::run();
         break;
 
-    case "profile":
+    case "profile": // Profile Page
         ProfileController::run();
         break;
 
-    case "logout":
+    case "logout": // Process for logging out of an account
         LogoutController::run();
         break;
+
+    case "401": // 401 Page
+        $title = "401 Error: Page Requires Authentication";
+        include "views/401-view.php";
 
     default: // 404 Page
         $title = "404 Error - Page Not Found";

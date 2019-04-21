@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION['name'])) {
+    header("Location: index.php?action=401");
+}
+?>
 
 <?php include("includes/application-header.php"); ?>
 
@@ -35,7 +40,8 @@
                                 <i class="fa fa-calendar-times"></i>
                             </span>
                                 </div>
-                                <input type="text" class="form-control" name="diary_date" id="diary_date" placeholder="Date Eg. 2019-03-22" required>
+                                <!-- Reference for regex: https://www.regextester.com/96683 -->
+                                <input type="text" class="form-control" name="diary_date" id="diary_date" placeholder="Date Eg. 2019-03-22" pattern="^(19[5-9][0-9]|20[0-4][0-9]|2050)[-/](0?[1-9]|1[0-2])[-/](0?[1-9]|[12][0-9]|3[01])$" title="Date must follow the pattern YYYY-MM-DD. Eg. 2019-03-22." required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -60,7 +66,7 @@
                                                 <i class="fa fa-clock"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" name="start_time" id="start_time" placeholder="Start time Eg. 08:00:00" required>
+                                        <input type="text" class="form-control" name="start_time" id="start_time" placeholder="Start time Eg. 08:00" pattern="^([01]\d|2[0-3]):(00|15|30|45)$" title="Time should be a valid time in 24 hour format. Eg. 08:00" required>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
@@ -71,7 +77,7 @@
                                                 <i class="fa fa-clock"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" name="end_time" id="finish_time" placeholder="End time Eg. 18:00:00" required>
+                                        <input type="text" class="form-control" name="end_time" id="finish_time" placeholder="End time Eg. 18:00" pattern="^([01]\d|2[0-3]):(00|15|30|45)$" title="Time should be a valid time in 24 hour format. Eg. 18:00" required>
                                     </div>
                                 </div>
                             </div>

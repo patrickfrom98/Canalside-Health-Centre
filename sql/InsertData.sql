@@ -15,30 +15,30 @@ INSERT INTO mvc_role (user_id, role) VALUES
 
 
 INSERT INTO mvc_patient (patient_id, user_id, title, gender, forename, surname) VALUES
-  ("8GOL4BG8VR6RZLRV", 2, "Mrs", "F", "Wendy", "Watson"),
-  ("LGGL6RANBP4RE82H", 3, "Mr", "M", "Richard", "Dodd"),
-  ("68D088C7OPKMAY4Y", 4, "Master", "M", "Hugo", "Hamdani"),
-  ("2QY8H0QTKZQSMGP6", 5, "Miss", "F", "Laura", "Mossy"),
-  ("PTU3467YTSP110Q1", NULL, "Miss", "F", "Ellie", "Appleton"),
-  ("CHS265780T6YQ38P", NULL, "Mr", "M", "Roger", "Stevens");
+  ("CHS0000000000000", 2, "Mrs", "F", "Wendy", "Watson"),
+  ("CHS0000000000001", 3, "Mr", "M", "Richard", "Dodd"),
+  ("CHS0000000000002", 4, "Master", "M", "Hugo", "Hamdani"),
+  ("CHS0000000000003", 5, "Miss", "F", "Laura", "Mossy"),
+  ("CHS0000000000004", NULL, "Miss", "F", "Ellie", "Appleton"),
+  ("CHS0000000000005", NULL, "Mr", "M", "Roger", "Stevens");
 
 
 INSERT INTO mvc_address (patient_id, address_1, address_2, town, county, postcode) VALUES
-  ("8GOL4BG8VR6RZLRV", "32 Spring Road", "Bradley", "Huddersfield", "West Yorkshire", "HD2 1QL"),
-  ("LGGL6RANBP4RE82H", "32 Spring Road", "Bradley", "Huddersfield", "West Yorkshire", "HD2 1QL"),
-  ("68D088C7OPKMAY4Y", "32 Spring Road", "Bradley", "Huddersfield", "West Yorkshire", "HD2 1QL"),
-  ("2QY8H0QTKZQSMGP6", "2 Colby Avenue", "Fixby", "Huddersfield", "West Yorkshire", "HD1 1LR"),
-  ("PTU3467YTSP110Q1", "16 Porcelly Road", "Birkby", "Huddersfield", "West Yorkshire", "HD2 7PR"),
-  ("CHS265780T6YQ38P", "122 Bowlden Road", "Fartown", "Huddersfield", "West Yorkshire", "HD1 3RR");
+  ("CHS0000000000000", "32 Spring Road", "Bradley", "Huddersfield", "West Yorkshire", "HD2 1QL"),
+  ("CHS0000000000001", "32 Spring Road", "Bradley", "Huddersfield", "West Yorkshire", "HD2 1QL"),
+  ("CHS0000000000002", "32 Spring Road", "Bradley", "Huddersfield", "West Yorkshire", "HD2 1QL"),
+  ("CHS0000000000003", "2 Colby Avenue", "Fixby", "Huddersfield", "West Yorkshire", "HD1 1LR"),
+  ("CHS0000000000004", "16 Porcelly Road", "Birkby", "Huddersfield", "West Yorkshire", "HD2 7PR"),
+  ("CHS0000000000005", "122 Bowlden Road", "Fartown", "Huddersfield", "West Yorkshire", "HD1 3RR");
 
 
 INSERT INTO mvc_contact (patient_id, mobile, landline, email) VALUES
-  ("8GOL4BG8VR6RZLRV", "07918253140", "01484402344", "w.thompson@hotmail.com"),
-  ("LGGL6RANBP4RE82H", "07345900276", "01484402344", "r.thompson@gmail.com"),
-  ("68D088C7OPKMAY4Y", "07882281340", "01484402344", "h.thompson@gmail.com"),
-  ("2QY8H0QTKZQSMGP6", "07945887828", "01676356790", "l.williamson@hotmail.co.uk"),
-  ("PTU3467YTSP110Q1", "07919333448", "01484997096", "e.appleton@gmail.com"),
-  ("CHS265780T6YQ38P", "07333485967", "01484992402", "r.stevens@virginmedia.com");
+  ("CHS0000000000000", "07918253140", "01484402344", "w.thompson@hotmail.com"),
+  ("CHS0000000000001", "07345900276", "01484402344", "r.thompson@gmail.com"),
+  ("CHS0000000000002", "07882281340", "01484402344", "h.thompson@gmail.com"),
+  ("CHS0000000000003", "07945887828", "01676356790", "l.williamson@hotmail.co.uk"),
+  ("CHS0000000000004", "07919333448", "01484997096", "e.appleton@gmail.com"),
+  ("CHS0000000000005", "07333485967", "01484992402", "r.stevens@virginmedia.com");
 
 
 INSERT INTO mvc_diary (diary_id, diary_name, diary_date, clinician_name, start_time, end_time) VALUES
@@ -63,12 +63,12 @@ INSERT INTO mvc_diary (diary_id, diary_name, diary_date, clinician_name, start_t
 
 
 INSERT INTO mvc_appointment (appointment_id, appointment_time, patient_id, patient_name) VALUES
-  (1, "08:00", "8GOL4BG8VR6RZLRV", "Mrs Wendy Watson"),
-  (2, "08:15", "68D088C7OPKMAY4Y", "Master Hugo Hamdani"),
-  (3, "08:30", "8GOL4BG8VR6RZLRV", "Mrs Wendy Watson"),
-  (4, "08:45", "LGGL6RANBP4RE82H", "Mr Richard Dodd"),
-  (5, "09:00", "2QY8H0QTKZQSMGP6", "Miss Laura Mossy"),
-  (6, "13:15", "PTU3467YTSP110Q1", "Miss Ellie Appleton");
+  (1, "08:00", "CHS0000000000000", "Mrs Wendy Watson"),
+  (2, "08:15", "CHS0000000000002", "Master Hugo Hamdani"),
+  (3, "08:30", "CHS0000000000000", "Mrs Wendy Watson"),
+  (4, "08:45", "CHS0000000000001", "Mr Richard Dodd"),
+  (5, "09:00", "CHS0000000000003", "Miss Laura Mossy"),
+  (6, "13:15", "CHS0000000000004", "Miss Ellie Appleton");
 
 
 INSERT INTO mvc_diary_appointment (appointment_id, diary_id) VALUES
