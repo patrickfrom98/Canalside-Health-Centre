@@ -18,7 +18,7 @@ The sql directory contains all files required to build and populate the database
 1. Receptionists can register new patients using the registration page. To register a patient, you must fill in the form and click submit. Patient ID are auto-generated and un-changable.
 2. Receptionists can un-register patients from the surgery. This system isn't implemented yet.
 3. Receptionists can add a diary of appointments to the system by filling in the form on the diaries page. Once a diary is added, it will show up on the same page.
-4. Receptionists can view available appointments across all of the current days diaries by clicking "View appointments" on the diaries page
+4. Receptionists can view available appointments across all of the current days diaries by clicking "View appointments" on the diaries page.
 5. Receptionists can book appointments by clicking "Book" at the bottom of each diary on the appointments page, then filling in the form on the next page in the process. The system to modify and cancel appointments has not yet been implemented.
 6. Receptionists can add new receptionists and GP accounts to the system by filling in the form on the users page.
 7. Receptionists can view the user profiles of patients by clicking "View all" and selecting a users profile. The search facility above the button has not yet been implemented.
@@ -32,3 +32,4 @@ The sql directory contains all files required to build and populate the database
 - Add patients appointment history to the user profile section for receptionists
 - Allow patients to record additional secondary addresses and contact details 
 - Add full functionality for clinicians
+- Improve dashboard functionality for receptionists and patients

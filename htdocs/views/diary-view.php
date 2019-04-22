@@ -43,6 +43,7 @@ if (!isset($_SESSION['name'])) {
                                 <!-- Reference for regex: https://www.regextester.com/96683 -->
                                 <input type="text" class="form-control" name="diary_date" id="diary_date" placeholder="Date Eg. 2019-03-22" pattern="^(19[5-9][0-9]|20[0-4][0-9]|2050)[-/](0?[1-9]|1[0-2])[-/](0?[1-9]|[12][0-9]|3[01])$" title="Date must follow the pattern YYYY-MM-DD. Eg. 2019-03-22." required>
                             </div>
+                            <small class="form-text text-muted">Date must follow the pattern YYYY-MM-DD. Eg. 2019-03-22..</small>
                         </div>
                         <div class="form-group">
                             <label for="clinician_name">Clinician Name</label>
