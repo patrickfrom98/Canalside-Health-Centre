@@ -32,6 +32,8 @@ require_once("controllers/profileController.php");
 require_once("controllers/logoutController.php");
 require_once("controllers/bookingController.php");
 require_once("controllers/bookingProcessController.php");
+require_once("controllers/detailsController.php");
+require_once("controllers/bookingsController.php");
 
 if (isset($_GET["action"])) {
     $action = $_GET['action'];
@@ -89,11 +91,7 @@ switch ($action) {
         break;
 
     case "bookings":
-        $user = Users::findByUsername($_SESSION['name']);
-        $patient = Patients::findByUserId($user['user_id']);
-        $upcoming = Diaries::getUpcoming($patient['patient_id']);
-        $previous = Diaries::getPrevious($patient['patient_id']);
-        include "views/bookings-view.php";
+        BookingsController::run();
         break;
 
     case "users": // Users Page
@@ -114,6 +112,10 @@ switch ($action) {
 
     case "profile": // Profile Page
         ProfileController::run();
+        break;
+
+    case "details":
+        DetailsController::run();
         break;
 
     case "logout": // Process for logging out of an account

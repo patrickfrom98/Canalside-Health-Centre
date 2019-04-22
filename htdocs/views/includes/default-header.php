@@ -11,18 +11,15 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
-    <header>
-        <h1>Canalside Health Centre</h1>
-    </header>
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="" title="Canalside Health Centre">CHS</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon" style="color: #fff;"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href='index.php?action=login'>Login</a>
-                <a class="nav-item nav-link" href='index.php?action=signup'>Signup</a>
-            </div>
-        </div>
-    </nav>
+<header>
+    <h1>Canalside Health Centre</h1>
+</header>
+<nav>
+    <div class='topnav' id='myTopnav'>
+        <a href="index.php?action=login">Login</a>
+        <a href='index.php?action=signup'>Signup</a>
+        <a href='javascript:void(0);' class='icon' onclick='myFunction()'>
+            <i class='fa fa-bars'></i>
+        </a>
+    </div>
+</nav>

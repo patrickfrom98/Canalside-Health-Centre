@@ -1,36 +1,68 @@
 header {
-    width: 100%;
-    height: 150px;
-    background-color: #009688;
-    color: #fff;
     margin: 0;
     padding: 0;
-    display: inline-block;
-    vertical-align: middle;
-    float: left;
-}
-
-nav {
     width: 100%;
-    height: 50px;
+    min-height: 130px;
+    background-color: #009688;
+}
+
+header h1 {
+    padding: 50px 0;
+    font-size: 1.7rem;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+.topnav {
+    overflow: hidden;
     background-color: #00786D;
-    margin: 0 0 100px 0;
-    padding: 0;
+    margin-bottom: 100px;
 }
 
-nav a {
+.topnav a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
     text-decoration: none;
-    color: #fff;
+    font-size: 17px;
 }
 
-.navbar-brand:hover {
-    color: #fff;
+.topnav a:hover {
+    background-color: #fff;
+    color: black;
+    text-decoration: none;
 }
 
-.nav-link:hover {
-    color: #2c3840;
+.home {
+    background-color: #12330b;
+    color: white;
 }
 
-.navbar-toggler-icon {
-    color: #fff;
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 570px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
 }

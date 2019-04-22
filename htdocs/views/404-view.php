@@ -1,6 +1,6 @@
 <?php include("includes/default-header.php"); ?>
 
-<div class="container">
+<div class="container custom">
     <div class="jumbotron">
         <h1 class="display-4">404 Error: Page Not Found</h1>
         <p class="lead">Oops, looks like this page isn't available anymore.</p>

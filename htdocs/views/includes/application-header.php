@@ -11,26 +11,25 @@
       <title><?php echo $title; ?></title>
   </head>
   <body>
-  <header>Canalside Health Centre</header>
-  <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="" title="Canalside Health Centre">CHS</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon" style="color: #fff;"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-              <a class="nav-item nav-link active" href='index.php?action=home'>Home <span class="sr-only">(current)</span></a>
-              <?php
-              if ($_SESSION['role'] === "Receptionist") {
-                  echo "<a class='nav-item nav-link' href='index.php?action=register'>Registration</a>";
-                  echo "<a class='nav-item nav-link' href='index.php?action=diary'>Diaries</a>";
-                  echo "<a class='nav-item nav-link' href='index.php?action=users'>Users</a>";
-              } else if ($_SESSION['role'] === "Patient") {
-                  echo "<a class='nav-item nav-link' href='index.php?action=details'>Details</a>";
-                  echo "<a class='nav-item nav-link' href='index.php?action=bookings'>Bookings</a>";
-              }
-              ?>
-              <a class="nav-item nav-link" href='index.php?action=logout'>Logout</a>
-          </div>
+  <header>
+      <h1>Canalside Health Centre</h1>
+  </header>
+  <nav>
+      <div class='topnav' id='myTopnav'>
+          <a class='home' href="index.php?action=home">Home</a>
+          <?php
+          if ($_SESSION['role'] === "Receptionist") {
+              echo "<a href='index.php?action=register'>Registration</a>";
+              echo "<a href='index.php?action=diary'>Diaries</a>";
+              echo "<a href='index.php?action=users'>Users</a>";
+          } else if ($_SESSION['role'] === "Patient") {
+              echo "<a href='index.php?action=details'>Details</a>";
+              echo "<a href='index.php?action=bookings'>Bookings</a>";
+          }
+          ?>
+          <a href='index.php?action=logout'>Logout</a>
+          <a href='javascript:void(0);' class='icon' onclick='myFunction()'>
+              <i class='fa fa-bars'></i>
+          </a>
       </div>
   </nav>

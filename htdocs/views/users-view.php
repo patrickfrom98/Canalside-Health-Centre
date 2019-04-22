@@ -6,7 +6,7 @@ if (!isset($_SESSION['name'])) {
 
 <?php include("includes/application-header.php"); ?>
 
-<div class="container">
+<div class="container custom">
     <div aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php?action=home">Home</a></li>

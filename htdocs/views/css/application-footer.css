@@ -6,3 +6,25 @@ footer {
     margin: 0;
     padding: 0;
 }
+
+footer h5 {
+    text-align: center;
+}
+
+footer p {
+    text-align: center;
+}
+
+footer ul {
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+}
+
+footer a:hover {
+    opacity: 0.8;
+}
