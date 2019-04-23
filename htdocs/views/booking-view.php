@@ -72,6 +72,7 @@ if (!isset($_SESSION['name'])) {
                                     <!-- Reference: https://stackoverflow.com/questions/1494671/regular-expression-for-matching-time-in-military-24-hour-format -->
                                     <input type="text" class="form-control" name="time" id="time" placeholder="Time Eg. 08:30" pattern="^([01]\d|2[0-3]):(00|15|30|45)$" title="Time should be a valid time in 24 hour format. Eg. 08:30" required>
                                 </div>
+                                <small class="form-text text-muted">Time must be in a 24:00 format</small>
                             </div>
                             <div class="form-group">
                                 <label for="patient_id">Patient ID</label>
