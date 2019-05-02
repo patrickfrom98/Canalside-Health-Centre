@@ -34,7 +34,6 @@ if (!isset($_SESSION['name'])) {
                                 </div>
                             </div>
                             <div class="form-group">
-                                <!-- Select Tag Reference - https://www.w3schools.com/tags/tag_select.asp -->
                                 <label for="title">Title</label>
                                 <select class="form-control" name="title" id="title" disabled>
                                     <option value="Mr" <?php if ($profile->getPatient()->getTitle() === "Mr") { echo "selected"; } ?>>Mr</option>
@@ -48,7 +47,6 @@ if (!isset($_SESSION['name'])) {
                             <div class="form-group">
                                 <label for="gender">Gender</label>
                                 <div class="form-check">
-                                    <!-- Radio Button Reference - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio -->
                                     <div>
                                         <input type="radio" class="form-check-input" name="gender" id="gender" value="M"
                                             <?php if ($profile->getPatient()->getGender() === "M") { echo "checked"; } ?> disabled>

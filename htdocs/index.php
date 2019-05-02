@@ -125,6 +125,7 @@ switch ($action) {
     case "401": // 401 Page
         $title = "401 Error: Page Requires Authentication";
         include "views/401-view.php";
+        break;
 
     default: // 404 Page
         $title = "404 Error - Page Not Found";
